@@ -1,0 +1,31 @@
+<mat-form-field>
+  <input matInput type="text" placeholder="New Hero" #heroName />
+  <button color="primary" mat-button matSuffix *ngIf="heroName.value" (click)="onAdd(heroName.value)">
+    Add
+  </button>
+</mat-form-field>
+
+<mat-card>
+  <mat-card-title>Simple card</mat-card-title>
+  <button mat-button matSuffix mat-icon-button aria-label="Clear">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-card>
+<mat-card>
+  <mat-card-title>Simple card</mat-card-title>
+  <button mat-button matSuffix mat-icon-button aria-label="Clear">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-card>
+<mat-card>
+  <mat-card-title>Simple card</mat-card-title>
+  <button mat-button matSuffix mat-icon-button aria-label="Clear">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-card>
+<mat-card>
+  <mat-card-title>Simple card</mat-card-title>
+  <button mat-button matSuffix mat-icon-button aria-label="Clear">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-card>

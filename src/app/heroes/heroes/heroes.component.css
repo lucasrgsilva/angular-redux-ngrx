@@ -1,0 +1,27 @@
+mat-card {
+  margin-bottom: 1rem;
+  display: flex;
+  padding: 14px 24px;
+}
+
+mat-card-title {
+  display: flex;
+  flex: 1 1 auto;
+  margin-bottom: 0;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-form-field button {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media (max-width: 599px) {
+  mat-card {
+    padding: 14px 16px;
+  }
+}

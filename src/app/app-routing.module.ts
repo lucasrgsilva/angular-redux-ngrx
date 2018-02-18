@@ -11,7 +11,7 @@ const routes: Routes = [
     children: [
       { path: 'heroes', loadChildren: './heroes/heroes.module#HeroesModule' },
       { path: 'dashboard', component: DashboardComponent },
-      // { path: '', pathMatch: 'full', redirectTo: 'dashboard' }
+      { path: '', pathMatch: 'full', redirectTo: 'dashboard' }
     ]
   },
 ];

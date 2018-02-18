@@ -1,0 +1,9 @@
+section {
+  padding: 2rem;
+}
+
+@media (max-width: 599px) {
+  section {
+    padding: .5rem;
+  }
+}
