@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { Hero } from '../model/hero';
 import { HeroesService } from './heroes.service';
-import { GetHero } from '../store/heroes.actions';
+import { GetHero, AddHero, DeleteHero } from '../store/heroes.actions';
 
 @Component({
   selector: 'app-heroes',
@@ -20,10 +20,6 @@ export class HeroesComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new GetHero());
     this.heroesStore = this.store.select('heroes');
-    // this.store.select('heroes').subscribe((heroesState) => {
-    //   console.log(heroesState);
-    // });
-    // this.getHeroes();
   }
 
   getHeroes(): void {
@@ -35,14 +31,10 @@ export class HeroesComponent implements OnInit {
     name = name.trim();
     if (!name) return;
 
-    this.heroesService.createHero({ name } as Hero)
-      .subscribe(hero => this.heroes.push(hero));
+    this.store.dispatch(new AddHero({ name } as Hero));
   }
 
-  onDelete(hero: Hero): void {
-    this.heroes.splice(this.heroes.findIndex(h => h.id === hero.id), 1);
-    // this.heroes = this.heroes.filter(h => h !== hero);
-    this.heroesService.deleteHero(hero)
-      .subscribe();
+  onDelete(id: number): void {
+    this.store.dispatch(new DeleteHero(id))
   }
 }

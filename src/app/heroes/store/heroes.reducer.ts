@@ -13,16 +13,17 @@ export function heroesReducer(state = initialState, action: HeroesActions) {
       ];
     case HeroesType.ADD_HERO_SUCCESS:
       return [
-        ...action.payload
+        action.payload,
+        ...state,
       ];
     case HeroesType.UPDATE_HERO_SUCCESS:
-      return [
-        ...action.payload
-      ];
+      return state.map(hero =>
+        hero.id !== action.payload.id ? hero : action.payload
+      );
     case HeroesType.DELETE_HERO_SUCCESS:
-      return [
-        ...action.payload
-      ];
+      return state.filter(hero =>
+        hero.id !== action.payload
+      );
     default:
       return state;
   }

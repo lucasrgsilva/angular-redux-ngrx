@@ -18,6 +18,7 @@ export class GetHero implements Action {
 
   constructor(public payload: any = null) { }
 }
+
 export class GetHeroSuccess implements Action {
   readonly type = HeroesType.GET_HERO_SUCCESS;
 
@@ -27,13 +28,13 @@ export class GetHeroSuccess implements Action {
 export class AddHero implements Action {
   readonly type = HeroesType.ADD_HERO;
 
-  constructor(public payload: any = null) { }
+  constructor(public payload: Hero) {}
 }
 
 export class AddHeroSuccess implements Action {
   readonly type = HeroesType.ADD_HERO_SUCCESS;
 
-  constructor(public payload: Hero) { }
+  constructor(public payload: any = null) { }
 }
 
 export class UpdateHero implements Action {
@@ -51,7 +52,7 @@ export class UpdateHeroSuccess implements Action {
 export class DeleteHero implements Action {
   readonly type = HeroesType.DELETE_HERO;
 
-  constructor(public payload: any = null) { }
+  constructor(public payload: number) { }
 }
 
 export class DeleteHeroSuccess implements Action {
