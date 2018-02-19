@@ -8,6 +8,9 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroesRoutingModule } from './heroes-routing.module';
+import { HeroesService } from './heroes/heroes.service';
+import { EffectsModule } from '@ngrx/effects';
+import { HeroesEffects } from './store/heroes.effects';
 
 @NgModule({
   imports: [
@@ -17,7 +20,9 @@ import { HeroesRoutingModule } from './heroes-routing.module';
     MatButtonModule,
     MatInputModule,
     MatIconModule,
+    EffectsModule.forFeature([HeroesEffects]),
   ],
-  declarations: [HeroesComponent]
+  declarations: [HeroesComponent],
+  providers: [HeroesService]
 })
 export class HeroesModule { }

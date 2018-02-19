@@ -1,31 +1,14 @@
 <mat-form-field>
   <input matInput type="text" placeholder="New Hero" #heroName />
-  <button color="primary" mat-button matSuffix *ngIf="heroName.value" (click)="onAdd(heroName.value)">
+  <button color="primary" mat-button matSuffix *ngIf="heroName.value" (click)="onAdd(heroName.value); heroName.value=''">
     Add
   </button>
 </mat-form-field>
 
-<mat-card>
-  <mat-card-title>Simple card</mat-card-title>
-  <button mat-button matSuffix mat-icon-button aria-label="Clear">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-card>
-<mat-card>
-  <mat-card-title>Simple card</mat-card-title>
-  <button mat-button matSuffix mat-icon-button aria-label="Clear">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-card>
-<mat-card>
-  <mat-card-title>Simple card</mat-card-title>
-  <button mat-button matSuffix mat-icon-button aria-label="Clear">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-card>
-<mat-card>
-  <mat-card-title>Simple card</mat-card-title>
-  <button mat-button matSuffix mat-icon-button aria-label="Clear">
+<mat-card *ngFor="let hero of heroesStore | async">
+<!-- <mat-card *ngFor="let hero of heroes"> -->
+  <mat-card-title>{{ hero.name }}</mat-card-title>
+  <button mat-button matSuffix mat-icon-button (click)="onDelete(hero)">
     <mat-icon>close</mat-icon>
   </button>
 </mat-card>
