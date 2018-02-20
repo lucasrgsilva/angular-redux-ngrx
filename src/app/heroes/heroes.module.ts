@@ -12,9 +12,9 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { HeroesEffects } from './store/heroes.effects';
-import { HeroesListComponent } from './heroes-list/heroes-list.component';
 import { HeroesService } from './services/heroes.service';
-import { HeroesDetailComponent } from './heroes-detail/heroes-detail.component';
+import { HeroesComponent } from './heroes/heroes.component';
+import { HeroDialogComponent } from './hero-dialog/hero-dialog.component';
 
 @NgModule({
   imports: [
@@ -29,12 +29,12 @@ import { HeroesDetailComponent } from './heroes-detail/heroes-detail.component';
     EffectsModule.forFeature([HeroesEffects]),
   ],
   declarations: [
-    HeroesListComponent, 
-    HeroesDetailComponent
+    HeroesComponent, 
+    HeroDialogComponent
   ],
   providers: [
     HeroesService, 
   ],  
-  entryComponents: [HeroesDetailComponent]
+  entryComponents: [HeroDialogComponent]
 })
 export class HeroesModule { }

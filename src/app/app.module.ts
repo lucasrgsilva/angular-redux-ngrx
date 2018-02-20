@@ -8,7 +8,6 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { heroesReducer } from './heroes/store/heroes.reducer';
 import { HeroesEffects } from './heroes/store/heroes.effects';
@@ -17,7 +16,6 @@ import { HeroesService } from './heroes/services/heroes.service';
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
   ],
   imports: [
     BrowserModule,

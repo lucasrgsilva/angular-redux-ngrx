@@ -1,27 +1,19 @@
-# AngularTourOfHeroes
+# Angular Tour of Heroes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.4.
+State management for Angular application using [Redux](https://redux.js.org/) concept with [@ngrx/store](https://github.com/ngrx/platform/blob/master/docs/store/README.md) and [@ngrx/effects](https://github.com/ngrx/platform/blob/master/docs/effects/README.md).
+
+This is a simple todo app inspired by Angular Tour of Heroes [tutorial](https://angular.io/tutorial) using [Material Design](https://material.io/guidelines/) for styling and state managment
 
 ## Development server
 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.4.
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Developing
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Technologies used
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- [Angular](https://angular.io/)
+- [Angular Material](https://material.angular.io/)
+- [NgRx](https://github.com/ngrx)

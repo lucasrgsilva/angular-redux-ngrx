@@ -7,15 +7,14 @@ import { GetHero, AddHero, DeleteHero, UpdateHero } from '../store/heroes.action
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { HeroesService } from '../services/heroes.service';
-import { HeroesDetailComponent } from '../heroes-detail/heroes-detail.component';
+import { HeroDialogComponent } from '../hero-dialog/hero-dialog.component';
 
 @Component({
   selector: 'app-heroes',
-  templateUrl: './heroes-list.component.html',
-  styleUrls: ['./heroes-list.component.css']
+  templateUrl: './heroes.component.html',
+  styleUrls: ['./heroes.component.css']
 })
-export class HeroesListComponent implements OnInit {
-  heroes: Hero[];
+export class HeroesComponent implements OnInit {
   heroesStore: Observable<Hero[]>;
 
   constructor(
@@ -26,12 +25,11 @@ export class HeroesListComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new GetHero());
-    this.heroesStore = this.store.select('heroes');
+    this.getHeroes();
   }
 
   getHeroes(): void {
-    this.heroesService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes);
+    this.heroesStore = this.store.select('heroes');
   }
 
   onAdd(name: string): void {
@@ -46,13 +44,9 @@ export class HeroesListComponent implements OnInit {
   }
 
   openDialog(hero): void {
-    let dialogRef = this.dialog.open(HeroesDetailComponent, {
+    this.dialog.open(HeroDialogComponent, {
       width: '400px',
       data: hero
-    });
-
-    dialogRef.afterClosed().subscribe(heroUpdated => {
-      this.store.dispatch(new UpdateHero(heroUpdated));
     });
   }
 }

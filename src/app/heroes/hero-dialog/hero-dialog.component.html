@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Edit hero detail</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="hero.name" placeholder="Hero name">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="hero" >Cancel</button>
+  <button mat-button (click)="onCloseConfirm()" [disabled]="!hero.name" color="primary">Ok</button>
+</div>
