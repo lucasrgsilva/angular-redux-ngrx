@@ -34,13 +34,13 @@ export class AddHero implements Action {
 export class AddHeroSuccess implements Action {
   readonly type = HeroesType.ADD_HERO_SUCCESS;
 
-  constructor(public payload: any = null) { }
+  constructor(public payload: Hero) { }
 }
 
 export class UpdateHero implements Action {
   readonly type = HeroesType.UPDATE_HERO;
 
-  constructor(public payload: any = null) { }
+  constructor(public payload: Hero) { }
 }
 
 export class UpdateHeroSuccess implements Action {

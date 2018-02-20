@@ -41,7 +41,7 @@ export class HeroesService {
     return this.httpClient.put(this.heroesUrl, hero, this.httpOptions)
       .pipe(
         tap(() => this.log(`Updated hero: ${hero.id}`)),
-        catchError(this.handleError<any>('updateHero'))
+        catchError(this.handleError<Hero>('updateHero'))
       );
   }
 

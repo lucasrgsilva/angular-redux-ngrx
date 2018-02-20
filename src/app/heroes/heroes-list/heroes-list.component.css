@@ -2,6 +2,13 @@ mat-card {
   margin-bottom: 1rem;
   display: flex;
   padding: 14px 24px;
+  transition: transform .1s;
+}
+
+mat-card:hover {
+  transform: scale(1.01);
+  box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
+  cursor: pointer;
 }
 
 mat-card-title {
@@ -12,7 +19,7 @@ mat-card-title {
 }
 
 mat-form-field {
-  width: 100%;
+  width: 60%;
 }
 
 mat-form-field button {
@@ -20,8 +27,17 @@ mat-form-field button {
   text-transform: uppercase;
 }
 
+.form {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 599px) {
   mat-card {
     padding: 14px 16px;
+  }
+
+  mat-form-field {
+    width: 100%;
   }
 }

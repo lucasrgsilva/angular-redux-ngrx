@@ -1,0 +1,15 @@
+<div class="form">
+  <mat-form-field>
+    <input matInput type="text" placeholder="New Hero" #heroName />
+    <button color="primary" mat-button matSuffix *ngIf="heroName.value" (click)="onAdd(heroName.value); heroName.value=''">
+      Add
+    </button>
+  </mat-form-field>
+</div>
+
+<mat-card *ngFor="let hero of heroesStore | async">
+  <mat-card-title (click)="openDialog(hero)">{{ hero.name }}</mat-card-title>
+  <button mat-button matSuffix mat-icon-button (click)="onDelete(hero.id)">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-card>

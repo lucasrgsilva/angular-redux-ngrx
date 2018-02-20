@@ -4,8 +4,8 @@ import { Actions, Effect } from '@ngrx/effects';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 
-import { HeroesType, GetHeroSuccess, AddHeroSuccess, HeroesActions, DeleteHeroSuccess } from './heroes.actions';
-import { HeroesService } from '../heroes/heroes.service';
+import { HeroesType, GetHeroSuccess, AddHeroSuccess, HeroesActions, DeleteHeroSuccess, UpdateHeroSuccess } from './heroes.actions';
+import { HeroesService } from '../services/heroes.service';
 
 @Injectable()
 export class HeroesEffects {
@@ -32,6 +32,14 @@ export class HeroesEffects {
     .ofType(HeroesType.DELETE_HERO)
     .switchMap((action: HeroesActions) =>
       this.heroesService.deleteHero(action.payload)
-        .map(hero => new DeleteHeroSuccess(action.payload))
+        .map(() => new DeleteHeroSuccess(action.payload))
     );
+
+  @Effect()
+  updateHero$ = this.actions$
+    .ofType(HeroesType.UPDATE_HERO)
+    .switchMap((action: HeroesActions) =>
+      this.heroesService.updateHero(action.payload)
+        .map(() => new UpdateHeroSuccess(action.payload))
+    )
 }

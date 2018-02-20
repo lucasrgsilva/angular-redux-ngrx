@@ -12,7 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { heroesReducer } from './heroes/store/heroes.reducer';
 import { HeroesEffects } from './heroes/store/heroes.effects';
-import { HeroesService } from './heroes/heroes/heroes.service';
+import { HeroesService } from './heroes/services/heroes.service';
 
 @NgModule({
   declarations: [
