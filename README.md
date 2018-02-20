@@ -2,7 +2,8 @@
 
 State management for Angular application using [Redux](https://redux.js.org/) concept with [@ngrx/store](https://github.com/ngrx/platform/blob/master/docs/store/README.md) and [@ngrx/effects](https://github.com/ngrx/platform/blob/master/docs/effects/README.md).
 
-This is a simple todo app inspired by Angular Tour of Heroes [tutorial](https://angular.io/tutorial) using [Material Design](https://material.io/guidelines/) for styling and state managment
+This is a simple todo app inspired by Angular Tour of Heroes [tutorial](https://angular.io/tutorial) using [Material Design](https://material.io/guidelines/) for styling. You can see a working example [here](https://tourofhero-ngrx.herokuapp.com/)
+
 
 ## Development server
 
